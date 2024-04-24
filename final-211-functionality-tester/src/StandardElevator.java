@@ -4,6 +4,11 @@ public class StandardElevator extends Elevator{
     private static int floorLocation;
     //array list of passengers that acts as the standard elevator
     protected static ArrayList<StandardElevator> se;
+
+    //this is the array list of the standard elevator that will be able to hold passengers
+    protected static ArrayList<Passenger> standardElevator = new ArrayList<>();
+
+
     public StandardElevator(){
         floorLocation = 0;
         elevatorType = "Standard";
@@ -21,14 +26,16 @@ public class StandardElevator extends Elevator{
     }
 
     @Override
-    public boolean move(direction _direction) {
+    public boolean move(direction _direction ){
+    //&&( There is someone still requesting to go higher than where the elevator is || someone that is uptop that can be picked up to go down)) {
 
         //holds the value of the elevator
         StandardElevator holder;
         int floor = StandardElevator.floorLocation;
         holder = StandardElevator.se.get(floor);
 
-        if(_direction == direction.UP && holder !=null){
+        if(_direction == direction.UP){
+                //&& (there is someone still requesting to go down or the elevator has reached the top)){
             StandardElevator.se.set(floor + 1, holder);
             StandardElevator.se.set(floor, null);
             setFloorLocation(floorLocation + 1);

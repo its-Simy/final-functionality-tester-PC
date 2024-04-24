@@ -1,8 +1,12 @@
+import java.lang.reflect.Array;
 import java.util.ArrayList;
 
 public class ExpressElevator extends Elevator{
     private static int floorLocation;
     protected static ArrayList<ExpressElevator> ee;
+
+    //this is the array list that acts as the express elevator, it will hold passengers
+    protected static ArrayList<Passenger> expressElevator = new ArrayList<>();
 
     public ExpressElevator(){
         floorLocation = 0;

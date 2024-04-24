@@ -12,10 +12,11 @@ public abstract class Elevator {
     protected int maximumCapacity;
     protected int elevatorRequestPercentage;
     protected int floornum;
+    ArrayList<Passenger> inprogressPassengers;
+    //this holds the people inside the elevators
 
-    public boolean move(direction _direction){
-        return false;
-    }
+
+    public abstract boolean move(direction _direction);
 
 
 
