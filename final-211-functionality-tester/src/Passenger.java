@@ -23,6 +23,5 @@ public abstract class Passenger {
     }
 }
 
-//i should make an arraylist of passenger objects, that has one standard and one express person on each floor
-//then the elevator is going to contain its own arraylist
+
 

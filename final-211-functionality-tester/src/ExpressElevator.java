@@ -3,9 +3,9 @@ import java.util.ArrayList;
 
 public class ExpressElevator extends Elevator{
     private static int floorLocation;
-    protected static ArrayList<ExpressElevator> ee;
 
     //this is the array list that acts as the express elevator, it will hold passengers
+    //the passengers it is holding will be the passengers actually inside of the elevator
     protected static ArrayList<Passenger> expressElevator = new ArrayList<>();
 
     public ExpressElevator(){
@@ -13,8 +13,6 @@ public class ExpressElevator extends Elevator{
         elevatorType = "VIP";
         maximumCapacity = 8;
         elevatorRequestPercentage = 20;
-        floornum = 6;
-        ee = new ArrayList<>(floornum);
 
 
     }
@@ -22,23 +20,16 @@ public class ExpressElevator extends Elevator{
 
     @Override
     public boolean move(direction _direction) {
-        //holds the value of the elevator
-        ExpressElevator holder;
-        int floor = ExpressElevator.floorLocation;
-        holder = ExpressElevator.ee.get(floor);
 
+    //first checks if the direction is up
         if(_direction == direction.UP ){
-                ExpressElevator.ee.set(floor + 1, holder);
-                ExpressElevator.ee.set(floor, null);
-                setFloorLocation(floorLocation + 1);
+            //next it is going to check if the elevator has reached the max floor
             }
 
 
         else if(_direction == direction.DOWN)
         {
-            ExpressElevator.ee.set(floor, null);
-            ExpressElevator.ee.set(floor - 1, holder);
-            setFloorLocation(floorLocation - 1);
+
         }
         else{
             System.out.println("Incorrect Input");
@@ -48,24 +39,17 @@ public class ExpressElevator extends Elevator{
 
     }
 
-    public static void addeElevator(){
-
-           ExpressElevator elevator1 = new ExpressElevator();
-            ee.add(elevator1);
-            System.out.println(ee.size());
-
-    }
-
-
+    //this will put the passenger into the elevator
     public void addPassenger(Passenger passenger) {
 
     }
 
-
+     //this will take the passenger out of the elevator
     public void removePassenger(Passenger passenger) {
 
     }
 
+    //sets the floor of the elevator
     public static void setFloorLocation(int floorLocation) {
         ExpressElevator.floorLocation = floorLocation;
     }

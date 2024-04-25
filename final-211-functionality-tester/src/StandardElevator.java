@@ -27,41 +27,21 @@ public class StandardElevator extends Elevator{
 
     @Override
     public boolean move(direction _direction ){
-    //&&( There is someone still requesting to go higher than where the elevator is || someone that is uptop that can be picked up to go down)) {
-
-        //holds the value of the elevator
-        StandardElevator holder;
-        int floor = StandardElevator.floorLocation;
-        holder = StandardElevator.se.get(floor);
 
         if(_direction == direction.UP){
-                //&& (there is someone still requesting to go down or the elevator has reached the top)){
-            StandardElevator.se.set(floor + 1, holder);
-            StandardElevator.se.set(floor, null);
-            setFloorLocation(floorLocation + 1);
+
             return true;
         }
 
-        else if(_direction == direction.DOWN && holder !=null)
+        else if(_direction == direction.DOWN)
         {
-            StandardElevator.se.set(floor, null);
-            StandardElevator.se.set(floor - 1, holder);
-            setFloorLocation(floorLocation - 1);
+
             return true;
         }
         else{
             System.out.println("Incorrect Input");
             return false;
         }
-
-
-    }
-//this is where the problem is
-    public static void addsElevator(){
-
-            StandardElevator elevator = new StandardElevator();
-            se.add(elevator);
-            System.out.println(se.size());
 
 
     }
