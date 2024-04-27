@@ -1,0 +1,16 @@
+# Building parameters
+floors 30
+# Elevator types
+elevator_type StandardElevator 10 40
+elevator_type ExpressElevator 8 25
+# Percentage of passenger requests for each elevator type
+request_percentage StandardElevator 60
+request_percentage ExpressElevator 40
+# Percentage of passenger requests for each passenger
+type
+passenger_request_percentage Standard 70
+passenger_request_percentage VIP 30
+# Number of elevators in the system
+number_of_elevators 8
+# Run simulation for 60 iterations
+run_simulation 60
