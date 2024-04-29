@@ -37,6 +37,8 @@ public class ElevatorSimulation {
 
             //This will add each one into the waiting queue
             // passengers are still waiting for an elevator
+            // 0 and even numbered waitQueue index are standard passengers
+            //odd index are express passengers
             Floor.waitQueue.add(SP);
             Floor.waitQueue.add(EP);
         }
