@@ -5,6 +5,7 @@ public abstract class Passenger {
     protected int passenger_percent_request;
     private int startFloor;
     private int destinationFloor;
+    public abstract boolean requestElevator(direction _direction, SimulationSettings _settings);
 
     public void setStartFloor(int startFloor) {
         this.startFloor = startFloor;
@@ -20,6 +21,10 @@ public abstract class Passenger {
 
     public int getDestinationFloor() {
         return destinationFloor;
+    }
+
+    public String getPassangerType() {
+        return passangerType;
     }
 }
 

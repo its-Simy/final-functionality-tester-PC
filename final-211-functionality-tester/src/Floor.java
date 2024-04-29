@@ -2,8 +2,8 @@ import java.util.ArrayList;
 
 public class Floor {
 
-    ArrayList<Passenger> waitQueue;
-    ArrayList<Passenger> completedQueue;
+    public static ArrayList<Passenger> waitQueue;
+   public static ArrayList<Passenger> completedQueue;
     private int floorID;
     // this would be the index of the floor
 
@@ -14,4 +14,10 @@ public class Floor {
     public int getFloorID() {
         return floorID;
     }
+/*
+    public void addPassengerToWaitQueue(Passenger passenger) {
+        waitQueue.add(passenger);
+    }
+ */
+
 }
